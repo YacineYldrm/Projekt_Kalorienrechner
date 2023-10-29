@@ -1,0 +1,115 @@
+// ########################################
+// 
+//             GENERALS / RESETS
+// 
+// ########################################
+
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+// ----------------------------------------
+//             Calculator body
+// ----------------------------------------
+
+body
+{
+    font-family: sans-serif;
+    background: linear-gradient(#D7BBF5, #eee8fc);
+    height: 100vh;
+    overflow: hidden;
+
+    .rechner_wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        max-width: 450px;
+        background-color: rgb(235, 235, 235);
+        border-radius: 12px;
+        margin-inline: auto;
+        gap: 12px;
+        margin-top: 24px;
+        box-shadow: 0px 0px 10px 0px rgba(83, 83, 83, 0.435);
+
+        h1
+        {
+            font-size: 28px;
+            letter-spacing: -1px;
+        }
+
+        div 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &:nth-of-type(4)
+            {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &:nth-of-type(5) select
+            {
+                background-color: white;
+                height: 32px;
+                border-radius: 4px;
+                border: 1px solid #6528F7;
+                padding-left: 8px;
+            }
+            
+            input
+            {
+                height: 32px;
+                border-radius: 4px;
+                border: 1px solid #6528F7;
+                padding-left: 8px;
+
+                &:focus
+                {
+                    outline: 2px solid #6528F7;
+                }
+            }
+        }
+
+        > input
+        {
+            background-color: #6528F7;
+            height: 40px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        .result_wrapper div
+        {
+            display: grid;
+            grid-template-columns: 130px 70px 70px;
+            column-gap: 30px;
+            font-weight: 700;
+
+            &:nth-of-type(1)
+            {
+                background-color: #6528F7;
+                color: white;
+                padding: 8px 4px 4px 4px;
+                border-radius: 4px 4px 0px 0px;
+            }
+
+            &:nth-of-type(2)
+            {
+                margin-top: -8px;
+                background-color: #A076F9;
+                color: white;
+                padding: 8px 4px 6px 4px;
+                border-radius: 0px 0px 8px 8px;
+            }
+        }
+    }
+}
+
