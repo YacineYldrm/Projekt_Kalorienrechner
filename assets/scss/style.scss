@@ -20,7 +20,6 @@ body
     font-family: sans-serif;
     background: linear-gradient(#D7BBF5, #eee8fc);
     height: 100vh;
-    overflow: hidden;
 
     .rechner_wrapper
     {
@@ -52,6 +51,7 @@ body
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                margin: -6px 0px;
             }
 
             &:nth-of-type(5) select
@@ -83,7 +83,9 @@ body
             height: 40px;
             color: #fff;
             font-size: 18px;
-            border-radius: 8px;
+            border-radius: 4px;
+            margin: 4px 0px 0px 0px;
+            border-color: #A076F9;
         }
 
         .result_wrapper div
@@ -107,7 +109,7 @@ body
                 background-color: #A076F9;
                 color: white;
                 padding: 8px 4px 6px 4px;
-                border-radius: 0px 0px 8px 8px;
+                border-radius: 0px 0px 4px 4px;
             }
         }
     }

@@ -35,6 +35,7 @@ body .rechner_wrapper div:nth-of-type(4) {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: -6px 0px;
 }
 body .rechner_wrapper div:nth-of-type(5) select {
   background-color: white;
@@ -57,7 +58,9 @@ body .rechner_wrapper > input {
   height: 40px;
   color: #fff;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 4px;
+  margin: 4px 0px 0px 0px;
+  border-color: #A076F9;
 }
 body .rechner_wrapper .result_wrapper div {
   display: grid;
@@ -76,7 +79,7 @@ body .rechner_wrapper .result_wrapper div:nth-of-type(2) {
   background-color: #A076F9;
   color: white;
   padding: 8px 4px 6px 4px;
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 4px 4px;
 }
 
 /*# sourceMappingURL=style.css.map */

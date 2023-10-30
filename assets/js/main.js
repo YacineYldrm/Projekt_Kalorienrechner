@@ -7,10 +7,10 @@
 // Variablen
 const genderFemale = document.body.querySelector('#female');
 const genderMale = document.body.querySelector('#male');
-const calcBtn = document.body.querySelector('#calcBtn');
 const palFact = document.body.querySelector('#palFact');
-const kcalOutput = document.body.querySelector('#kcalResult');
-const kjOutput = document.body.querySelector('#kjResult');
+const calcBtn = document.body.querySelector('#calcBtn');
+const kcalBaseOutput = document.body.querySelector('#kcalBase');
+const kjBaseOutput = document.body.querySelector('#kjBase');
 const kcalTotalOutput = document.body.querySelector('#kcalTotal');
 const kjTotalOutput = document.body.querySelector('#kjTotal');
 
@@ -18,10 +18,10 @@ const kJ = 4.1868;
 let multiWeight = 0;
 let multiHeight = 0;
 let multiAge = 0;
-let constant = 0;
 let palFactor = 0;
-let kcalResult = 0;
-let kjResult = 0;
+let constant = 0;
+let kcalBase = 0;
+let kjBase = 0;
 let kcalTotal = 0;
 let kjTotal = 0;
 
@@ -42,12 +42,6 @@ genderMale.addEventListener('click', () =>
     multiAge =  6.8
 })
 
-// User Input körperliche Belastung (PAL-Faktor)
-palFact.addEventListener('click', () => 
-{
-    palFactor = palFact.value;
-})
-
 // Berechnung nach Harris Benedict Formel und Ausgabe Ergebnisse
 calcBtn.addEventListener('click', () =>
 {
@@ -55,26 +49,27 @@ calcBtn.addEventListener('click', () =>
     const heightInput = Number(document.body.querySelector('#heightInput').value);
     const ageInput = Number(document.body.querySelector('#ageInput').value);
     const weightInput = Number(document.body.querySelector('#weightInput').value);
+    palFactor = Number(palFact.value);
 
     //Prüfung von User Input auf Vollständigkeit
-    if(constant !== 0 && multiWeight !== 0 && multiHeight !== 0 && multiAge !== 0 && palFactor !== 0 && heightInput !== 0 && ageInput !== 0 && weightInput !== 0)
+    if(palFactor !== 0 && constant !== 0 && heightInput !== 0 && ageInput !== 0 && weightInput !== 0)
     {
         //Berechnung
-        kcalResult = (constant + (multiWeight * weightInput) + ( multiHeight * heightInput) - (multiAge * ageInput)).toFixed(2); 
-        kjResult = (kcalResult * kJ).toFixed(2);
-        kcalTotal = (kcalResult * palFactor).toFixed(2);
+        kcalBase = (constant + (multiWeight * weightInput) + ( multiHeight * heightInput) - (multiAge * ageInput)).toFixed(2); 
+        kjBase = (kcalBase * kJ).toFixed(2);
+        kcalTotal = (kcalBase * palFactor).toFixed(2);
         kjTotal = (kcalTotal * kJ).toFixed(2);
 
         // Output
-        kcalOutput.textContent = kcalResult;
-        kjOutput.textContent = kjResult;
+        kcalBaseOutput.textContent = kcalBase;
+        kjBaseOutput.textContent = kjBase;
         kcalTotalOutput.textContent = kcalTotal;
         kjTotalOutput.textContent = kjTotal;
     }
     else
     {
         // Error handling bei nicht vollständigem User Input
-        window.alert("Bitte Eingabefelder ausfüllen und Auswahl treffen.");
+        window.alert("Bitte alle Eingabefelder ausfüllen und Auswahl treffen.");
         return false;
     }
 })
